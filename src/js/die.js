@@ -10,15 +10,12 @@
 // Random number
 // Color & color history
 var Die = function () {
-    console.log("I'm the Die object");
     this.colorsAry = [];
 };
 
 Die.prototype.randomNumber = function() {
     this.num = Math.floor((Math.random() * 6) + 1);
-    // var txt = document.getElementById("sum");
-    // txt.innerHtml = this.num;
-    console.log(this.num);
+    this.sum = this.num;
     return this.num;
 };
 
@@ -37,9 +34,9 @@ Die.prototype.getColor = function(prev) {
         "rgb(179,143,177)"
     ];
 
-    this.prev = prev || this.palette[4];
+    this.prev = prev || this.palette[8];
 
-    this.colors = this.palette;
+    this.colors = [this.palette[0],this.palette[4],this.palette[5]];
 
     // remove previus color from array to ensure each role of die gets new color
     for (var i = 0; i < this.palette.length; i++) {
@@ -53,19 +50,30 @@ Die.prototype.getColor = function(prev) {
 
     // set the color to return
     this.currentColor = this.colors[this.randColor];
-    die1.colorHistory(this.currentColor);
+    // this.colorHistory(this.currentColor);
 
     return this.currentColor;
 };
 
-Die.prototype.colorHistory = function(prev) {
-    this.colorsAry.push(this.prev);
-    if (this.colorsAry.lengh >= 10) {
-        this.colorsAry.shift();
-    }
-    console.log(this.colorsAry);
+// Why do I need this?!
+// Die.prototype.colorHistory = function(prev) {
+//     this.colorsAry.push(this.prev);
+//     if (this.colorsAry.lengh >= 10) {
+//         this.colorsAry.shift();
+//     }
+//     console.log(this.colorsAry);
+// };
+
+// Self is merely used as part of identifying the element on the page, for instance die1, die2, etc...
+Die.prototype.roll = function(num) {
+    var self = num;
+    this.setText(self);
+    // this.setDots(self);
 };
 
-Die.prototype.roll = function() {
-    this.randomNumber();
+Die.prototype.setText = function(self) {
+    var el = document.getElementById("die"+self);
+    var num = this.randomNumber();
+    $(el).find(".txt").text(num);
+    $(el).css('background-color', this.getColor());
 };
