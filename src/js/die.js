@@ -65,15 +65,20 @@ Die.prototype.getColor = function(prev) {
 // };
 
 // Self is merely used as part of identifying the element on the page, for instance die1, die2, etc...
-Die.prototype.roll = function(num) {
-    var self = num;
-    this.setText(self);
-    // this.setDots(self);
+// OK, this is too complicated. Here's what needs to happen:
+// Get the random number for each die
+// Push that number into the roll array in order to get the sum of all dice in the current roll
+// Use each individual number to display the correct number of dots on the appropriate die
+// Use the sum to display the sum in text above the dice
+// Push the roll array into the history array
+Die.prototype.roll = function(self) {
+    var num = this.randomNumber();
+    rollAry.push(num);
+    this.setText(self, num);
 };
 
-Die.prototype.setText = function(self) {
-    var el = document.getElementById("die"+self);
-    var num = this.randomNumber();
-    $(el).find(".txt").text(num);
-    $(el).css('background-color', this.getColor());
+Die.prototype.setText = function(self, num) {
+    var die = document.getElementById("die"+self);
+    $(die).find(".txt").text(num);
+    $(die).css('background-color', this.getColor());
 };
