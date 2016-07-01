@@ -1,0 +1,11 @@
+{
+    "user": {
+        "name": {
+            "first": "Joe",
+            "last": "Day"
+        },
+        "dice": {
+            "count": "6"
+        }
+    }
+}
