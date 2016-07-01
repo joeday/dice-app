@@ -132,12 +132,16 @@ h3 {
     .three &,
     .four & {
         flex-wrap: wrap-reverse;
-        justify-content: flex-end;
+        justify-content: flex-start;
+        @media (orientation: landscape) {
+            justify-content: flex-end;
+        }
         .die {
             @media (orientation: portrait) {
                 width: calc(50vw - 2px);
                 height: calc(50vw - 2px);
                 font-size: 44vw;
+
             }
             @media (orientation: landscape) {
                 width: calc(50vh - 2px);
@@ -151,9 +155,6 @@ h3 {
         flex-wrap: wrap-reverse;
         justify-content: flex-end;
         .die {
-            &:first-of-type {
-                flex-basis: 1;
-            }
             @media (orientation: portrait) {
                 width: calc(33.333vw - 2px);
                 height: calc(33.333vw - 2px);
@@ -183,11 +184,4 @@ h3 {
         justify-content: center;
         height: 100%;
     }
-    // Use this if I can't stack three high
-    // Which might be on tablet
-    // &.five {
-    //     width: calc((100%/3) - 2px);
-    //     height: calc((100%/3 - 2px));
-    //     font-size: 30vw;
-    // }
 }

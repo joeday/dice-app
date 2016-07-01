@@ -59,7 +59,17 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'node_modules/jquery/dist',
                     src: 'jquery.min.js',
-                    dest: 'dist/js' 
+                    dest: 'dist/js'
+                }, {
+                    expand: true,
+                    cwd: 'node_modules/fastclick/lib',
+                    src: 'fastclick.js',
+                    dest: 'dist/js'
+                }, {
+                    expand: true,
+                    cwd: 'node_modules/prevent-overscroll',
+                    src: 'index.js',
+                    dest: 'dist/js'
                 }]
             }
         },

@@ -6,6 +6,14 @@ var diceAry = [];
 var rollAry = [];
 var rollHistoryAry = [];
 
+// Instantiate fastclick before we get too far
+$(function() {
+	FastClick.attach(document.body);
+});
+
+// Instantiate preventOverscroll
+// var preventOverscroll = require('prevent-overscroll');
+
 // Get the user data so we can create the dice
 $.getJSON('data/user.json', function(response) {
     // console.log(response);
