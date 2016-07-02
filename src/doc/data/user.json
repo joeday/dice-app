@@ -4,8 +4,11 @@
             "first": "Joe",
             "last": "Day"
         },
+        "account": {
+            "paid": 1
+        },
         "dice": {
-            "count": "6"
+            "count": 6
         }
     }
 }

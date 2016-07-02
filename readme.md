@@ -1,16 +1,14 @@
-# Joe Day's Web Project Boilerplate Recipe
+# Minimalist Dice
+A simple 6-sided die to use for games. I built this when my daughters Frozen pop-up game stopped popping.
 
-### NPM
-It's a great package manager with access to lots of good things.
+## How To Role the Die
+First, go to http://joeday.github.io/dice on any browser. Then...
 
-### Grunt
-Need the ability to customize build, actions, etc...
+#### On Mobile
+Touch the die. 
 
-### GIT
-Easy branching and awesome open sourcyness on github
+#### On Desktop
+You have two options to roll the die:
 
-### SASS
-Syntactically awesome stylesheets make life much better
-
-### Particular Goodies
-* Modernizr - Ability to target certain features of lackthereof on any browser
+1.  Press Spacebar
+2.  Click the die

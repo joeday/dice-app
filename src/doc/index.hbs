@@ -1,5 +1,12 @@
 <nav class="nav">
-
+    {{#if user.account.paid}}
+        How many dice?
+        <select id="diceCount">
+            
+        </select>
+    {{else}}
+        Welcome to the free version of the dice app! Here, you have one six-sided die. If you you need more dice, <a href="">upgrade to dice loaded</a>!
+    {{/if}}
 </nav>
 <header class="header">
     <h1>dice</h1>

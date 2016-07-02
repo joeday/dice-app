@@ -68,7 +68,7 @@ function rollDice() {
     var s = document.getElementById("sum");
     $(s).text(total);
 
-    // Update the history text (not needed yet)
+    // Update the history text
     // var h = document.getElementById("history");
     // var j = [];
     // for (i = 0; i < rollHistoryAry.length; i++) {
